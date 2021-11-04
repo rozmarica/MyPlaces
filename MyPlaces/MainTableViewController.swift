@@ -33,8 +33,14 @@ class MainTableViewController: UITableViewController {
         let index = indexPath.row
         cell.textLabel?.text = restaurantNames[index]
         cell.imageView?.image = UIImage(named: restaurantNames[index])!
-
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 
     /*
